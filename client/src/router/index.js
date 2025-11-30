@@ -17,14 +17,16 @@ const routes = [
     component: () => import('../pages/UnderConstruction.vue'),
     meta: { title: 'Tefa Bakery | Pengembangan' },
   },
+  // under construction
   {
     path: '/Galeri',
-    component: () => import('../pages/GaleryPage.vue'),
+    component: () => import('../pages/UnderConstruction.vue'),
     meta: { title: 'Tefa Bakery | Galeri' },
   },
+  // under construction
   {
     path: '/Kontak',
-    component: () => import('../pages/ContactPage.vue'),
+    component: () => import('../pages/UnderConstruction.vue'),
     meta: { title: 'Tefa Bakery | Kontak' },
   },
 
