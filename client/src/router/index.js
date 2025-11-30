@@ -3,28 +3,36 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
-    component: () => import('../components/pages/HomePage.vue'),
+    component: () => import('../pages/HomePage.vue'),
     meta: { title: 'Tefa Bakery | Home' },
   },
   {
     path: '/Tentang-Kami',
-    component: () => import('../components/pages/AboutPage.vue'),
+    component: () => import('../pages/AboutPage.vue'),
     meta: { title: 'Tefa Bakery | Tentang Kami' },
   },
+  // under construction
   {
     path: '/Produk',
-    component: () => import('../components/pages/ProductPage.vue'),
-    meta: { title: 'Tefa Bakery | Produk' },
+    component: () => import('../pages/UnderConstruction.vue'),
+    meta: { title: 'Tefa Bakery | Pengembangan' },
   },
   {
     path: '/Galeri',
-    component: () => import('../components/pages/GaleryPage.vue'),
+    component: () => import('../pages/GaleryPage.vue'),
     meta: { title: 'Tefa Bakery | Galeri' },
   },
   {
     path: '/Kontak',
-    component: () => import('../components/pages/ContactPage.vue'),
+    component: () => import('../pages/ContactPage.vue'),
     meta: { title: 'Tefa Bakery | Kontak' },
+  },
+
+  // not found route
+  {
+    path: '/:pathMatch(.*)*',
+    component: () => import('../pages/NotFound.vue'),
+    meta: { title: 'Tefa Bakery | 404 Not Found' },
   },
 ]
 

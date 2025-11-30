@@ -2,10 +2,16 @@
   <div class="font-[quicksand] text-primary">
     <!-- Hero -->
     <section>
-      <div
-        class="flex items-center justify-center bg-[#FAF9F6] min-h-screen min-w-screen text-start"
-      >
-        <div class="flex gap-48">
+      <div class="flex min-h-screen min-w-screen text-start">
+        <img
+          class="w-screen h-screen object-cover contrast-30"
+          src="/assets/images/primary-bg.webp"
+          alt=""
+        />
+
+        <div class="absolute inset-0 bg-on-primary/90"></div>
+
+        <div class="absolute inset-0 flex gap-48 justify-center items-center">
           <div class="flex flex-col max-w-xl gap-8">
             <div class="flex flex-col gap-6">
               <h1 class="font-semibold text-7xl">Tefa Bakery<br />& Coffee</h1>
@@ -174,11 +180,13 @@
     </section>
 
     <section>
-      <div class="flex flex-col py-24 gap-12 bg-[#FAF9F6]">
+      <div class="flex flex-col py-24 gap-24 bg-[#FAF9F6]">
         <h1 class="font-semibold text-5xl text-center">Kepuasan Pelanggan</h1>
         <div class="flex gap-12 items-center justify-center">
           <!-- card -->
-          <div class="flex flex-col gap-4 bg-[#F5E6D3] p-12 rounded-2xl shadow-smooth">
+          <div
+            class="flex flex-col gap-4 bg-[#F5E6D3] p-12 rounded-2xl shadow-smooth transition duration-300 ease-out hover:-translate-y-1 hover:shadow-banner"
+          >
             <!-- stars & comment -->
             <div class="flex flex-col gap-2">
               <!-- stars -->
@@ -206,7 +214,9 @@
             </div>
           </div>
           <!-- card -->
-          <div class="flex flex-col gap-4 bg-[#F5E6D3] p-12 rounded-2xl shadow-smooth">
+          <div
+            class="flex flex-col gap-4 bg-[#F5E6D3] p-12 rounded-2xl shadow-smooth transition duration-300 ease-out hover:-translate-y-1 hover:shadow-banner"
+          >
             <!-- stars & comment -->
             <div class="flex flex-col gap-2">
               <!-- stars -->
@@ -234,7 +244,9 @@
             </div>
           </div>
           <!-- card -->
-          <div class="flex flex-col gap-4 bg-[#F5E6D3] p-12 rounded-2xl shadow-smooth">
+          <div
+            class="flex flex-col gap-4 bg-[#F5E6D3] p-12 rounded-2xl shadow-smooth transition duration-300 ease-out hover:-translate-y-1 hover:shadow-banner"
+          >
             <!-- stars & comment -->
             <div class="flex flex-col gap-2">
               <!-- stars -->

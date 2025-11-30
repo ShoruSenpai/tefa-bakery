@@ -2,13 +2,13 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 // custom css assets
-import './components/assets/styles/shadow.css'
-import './components/assets/styles/colors.css'
-import './components/assets/styles/animations.css'
-import './components/assets/styles/fonts.css'
+import './assets/styles/shadow.css'
+import './assets/styles/colors.css'
+import './assets/styles/animations.css'
+import './assets/styles/fonts.css'
 
 // tailwind assets
-import './components/assets/main.css'
+import './assets/main.css'
 
 import App from './App.vue'
 import router from './router'
