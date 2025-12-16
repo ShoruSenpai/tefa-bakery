@@ -9,7 +9,7 @@
           alt=""
         />
 
-        <div class="absolute inset-0 bg-on-primary/90"></div>
+        <div class="absolute h-screen w-screen inset-0 bg-on-primary/90"></div>
 
         <div class="absolute inset-0 flex gap-48 justify-center items-center">
           <div class="flex flex-col max-w-xl gap-8">
@@ -185,7 +185,7 @@
         <div class="flex gap-12 items-center justify-center">
           <!-- card -->
           <div
-            class="flex flex-col gap-4 bg-[#F5E6D3] p-12 rounded-2xl shadow-smooth transition duration-300 ease-out hover:-translate-y-1 hover:shadow-banner"
+            class="flex flex-col gap-4 bg-[#F5E6D3] px-12 py-8 rounded-2xl shadow-smooth transition duration-300 ease-out hover:-translate-y-1 hover:shadow-banner"
           >
             <!-- stars & comment -->
             <div class="flex flex-col gap-2">
@@ -215,7 +215,7 @@
           </div>
           <!-- card -->
           <div
-            class="flex flex-col gap-4 bg-[#F5E6D3] p-12 rounded-2xl shadow-smooth transition duration-300 ease-out hover:-translate-y-1 hover:shadow-banner"
+            class="flex flex-col gap-4 bg-[#F5E6D3] px-12 py-8 rounded-2xl shadow-smooth transition duration-300 ease-out hover:-translate-y-1 hover:shadow-banner"
           >
             <!-- stars & comment -->
             <div class="flex flex-col gap-2">
@@ -245,7 +245,7 @@
           </div>
           <!-- card -->
           <div
-            class="flex flex-col gap-4 bg-[#F5E6D3] p-12 rounded-2xl shadow-smooth transition duration-300 ease-out hover:-translate-y-1 hover:shadow-banner"
+            class="flex flex-col gap-4 bg-[#F5E6D3] px-12 py-8 rounded-2xl shadow-smooth transition duration-300 ease-out hover:-translate-y-1 hover:shadow-banner"
           >
             <!-- stars & comment -->
             <div class="flex flex-col gap-2">

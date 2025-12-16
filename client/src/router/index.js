@@ -20,7 +20,7 @@ const routes = [
   // under construction
   {
     path: '/Galeri',
-    component: () => import('../pages/UnderConstruction.vue'),
+    component: () => import('../pages/GalleryPage.vue'),
     meta: { title: 'Tefa Bakery | Galeri' },
   },
   // under construction
