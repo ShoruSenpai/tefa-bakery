@@ -10,6 +10,10 @@ import './assets/styles/fonts.css'
 // tailwind assets
 import './assets/main.css'
 
+// aos setup
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 import App from './App.vue'
 import router from './router'
 
@@ -30,3 +34,8 @@ app.use(createPinia())
 app.use(router)
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.mount('#app')
+
+AOS.init({
+  once: false,
+  mirror: true,
+})

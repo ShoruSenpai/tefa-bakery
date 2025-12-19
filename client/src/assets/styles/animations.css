@@ -10,14 +10,31 @@
     content: '';
     position: absolute;
     width: 0;
-    height: 2.2px;
+    height: 2.4px;
     left: 0;
     bottom: 0;
     background: #6b4423;
     transition: all 0.3s ease;
+    margin-bottom: -2px;
   }
 
   .underline-hover:hover::after {
+    width: 100%;
+  }
+
+  .nav-active {
+    position: relative;
+    display: inline-block;
+  }
+
+  .nav-active::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2.4px;
+    left: 0;
+    bottom: 0;
+    background: #6b4423;
     width: 100%;
   }
 }
