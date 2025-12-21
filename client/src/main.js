@@ -22,11 +22,30 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // import fontawesome icon libary
-import { faLocationDot, faEye, faStar } from '@fortawesome/free-solid-svg-icons'
-import { faInstagram, faFacebook, faTiktok } from '@fortawesome/free-brands-svg-icons'
+import { fas, faLocationDot, faEye, faStar } from '@fortawesome/free-solid-svg-icons'
+import { far, faClock } from '@fortawesome/free-regular-svg-icons'
+import {
+  fab,
+  faInstagram,
+  faFacebook,
+  faTiktok,
+  faWhatsapp,
+} from '@fortawesome/free-brands-svg-icons'
 
 // libary added
-library.add(faLocationDot, faInstagram, faFacebook, faTiktok, faEye, faStar)
+library.add(
+  fas,
+  far,
+  fab,
+  faInstagram,
+  faFacebook,
+  faTiktok,
+  faWhatsapp,
+  faEye,
+  faStar,
+  faClock,
+  faLocationDot,
+)
 
 const app = createApp(App)
 

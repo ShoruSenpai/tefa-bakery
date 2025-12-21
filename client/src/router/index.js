@@ -2,39 +2,45 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
+    name: 'home',
     path: '/',
-    component: () => import('../pages/HomePage.vue'),
-    meta: { title: 'Tefa Bakery | Home' },
+    component: () => import('/src/pages/HomePage.vue'),
+    meta: { title: 'Tefa Bakery | Home', fullscreen: true },
   },
   {
+    name: 'about',
     path: '/Tentang-Kami',
-    component: () => import('../pages/AboutPage.vue'),
-    meta: { title: 'Tefa Bakery | Tentang Kami' },
+    component: () => import('/src/pages/AboutPage.vue'),
+    meta: { title: 'Tefa Bakery | Tentang Kami', fullscreen: true },
   },
   // under construction
   {
+    name: 'product',
     path: '/Produk',
-    component: () => import('../pages/UnderConstruction.vue'),
-    meta: { title: 'Tefa Bakery | Pengembangan' },
+    component: () => import('/src/pages/UnderConstruction.vue'),
+    meta: { title: 'Tefa Bakery | Pengembangan', fullscreen: false },
   },
   // under construction
   {
+    name: 'gallery',
     path: '/Galeri',
-    component: () => import('../pages/GalleryPage.vue'),
-    meta: { title: 'Tefa Bakery | Galeri' },
+    component: () => import('/src/pages/GalleryPage.vue'),
+    meta: { title: 'Tefa Bakery | Galeri', fullscreen: false },
   },
   // under construction
   {
+    name: 'contact',
     path: '/Kontak',
-    component: () => import('../pages/UnderConstruction.vue'),
-    meta: { title: 'Tefa Bakery | Kontak' },
+    component: () => import('/src/pages/ContactPage.vue'),
+    meta: { title: 'Tefa Bakery | Kontak', fullscreen: false },
   },
 
   // not found route
   {
+    name: '404',
     path: '/:pathMatch(.*)*',
-    component: () => import('../pages/NotFound.vue'),
-    meta: { title: 'Tefa Bakery | 404 Not Found' },
+    component: () => import('/src/pages/NotFound.vue'),
+    meta: { title: 'Tefa Bakery | 404 Not Found', fullscreen: true },
   },
 ]
 
@@ -44,11 +50,15 @@ const router = createRouter({
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
-    } else {
-      return {
-        top: 0,
-        behavior: 'smooth',
-      }
+    }
+
+    if (to.meta.fullscreen) {
+      return { top: 0 }
+    }
+
+    return {
+      top: 0,
+      behavior: 'instant',
     }
   },
 })

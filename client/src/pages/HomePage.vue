@@ -52,7 +52,7 @@
       <div class="flex justify-center items-center py-12 gap-24 mt-24 mb-24">
         <img
           data-aos="fade-right"
-          data-aos-duration="600"
+          data-aos-duration="900"
           class="w-xl h-98 object-cover object-[37%] brightness-80 overflow-hidden rounded-4xl border-primary-border border shadow-banner"
           src="/assets/images/section-banner.webp"
           alt="Information"
@@ -194,8 +194,8 @@
             </div>
           </div>
 
-          <button ref="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2">⬅</button>
-          <button ref="nextBtn" class="absolute right-4 top-1/2 -translate-y-1/2">➡</button>
+          <button @click="handlePrev" class="absolute left-4 top-1/2 -translate-y-1/2">⬅</button>
+          <button @click="handleNext" class="absolute right-4 top-1/2 -translate-y-1/2">➡</button>
         </div>
       </div>
     </section>
@@ -303,35 +303,40 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const track = ref(null)
-const nextBtn = ref(null)
-const prevBtn = ref(null)
 const cards = ref([])
 
 let currentIndex = 0
 let cardWidth = 0
+
 function updateCarousel() {
+  if (!track.value) return
+
   track.value.style.transform = `translateX(-${currentIndex * cardWidth}px)`
+}
+
+function handleNext() {
+  if (currentIndex < cards.value.length - 1) {
+    currentIndex++
+    updateCarousel()
+  }
+}
+
+function handlePrev() {
+  if (currentIndex > 0) {
+    currentIndex--
+    updateCarousel()
+  }
 }
 
 onMounted(() => {
   cards.value = track.value.querySelectorAll('.card')
+  if (!cards.value.length) return
+
   cardWidth = cards.value[0].offsetWidth + 32
-
-  nextBtn.value.addEventListener('click', () => {
-    if (currentIndex < cards.value.length - 1) {
-      currentIndex++
-      updateCarousel()
-    }
-  })
-
-  prevBtn.value.addEventListener('click', () => {
-    if (currentIndex > 0) {
-      currentIndex--
-      updateCarousel()
-    }
-  })
 })
+
+onUnmounted(() => {})
 </script>
