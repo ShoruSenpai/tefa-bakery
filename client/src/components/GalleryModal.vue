@@ -52,17 +52,26 @@
 
         <button
           class="absolute bottom-5 right-6 flex items-center bg-primary/90 text-on-primary self-end py-2 px-4 gap-2 rounded-full hover:bg-primary transition duration-500 shadow-card"
+          @click="showShare = true"
         >
           <font-awesome-icon class="text-sm" icon="share-nodes" />
           <h3 class="text-sm">Bagikan</h3>
         </button>
+
+        <ShareActions
+          :open="showShare"
+          :title="data.title"
+          :desciption="data.desciption"
+          :url="data.image"
+          @close="showShare = false"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import ShareActions from './ShareActions.vue'
 
 const props = defineProps({
@@ -71,6 +80,7 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['close'])
+const showShare = ref(false)
 
 const handleEsc = (e) => {
   if (e.key === 'Escape') {

@@ -13,7 +13,30 @@
 
         <!-- main content -->
         <div class="grid grid-cols-3 auto-rows-[220px] gap-6 grid-flow-dense px-48 py-24">
+          <!-- loading -->
+          <div v-if="loading" class="text-center font-medium col-span-3 flex items-center text-xl">
+            Memuat galeri...
+          </div>
+
+          <!-- error -->
           <div
+            v-else-if="error"
+            class="whitespace-pre-line font-medium text-center col-span-3 flex items-center text-error-text bg-error self-center py-2 px-6 rounded-3xl border border-error-border shadow-smooth hover:shadow-banner transition duration-500"
+          >
+            {{ error }}
+          </div>
+
+          <!-- empty -->
+          <div
+            v-else-if="galleries.length === 0"
+            class="text-center font-medium col-span-3 flex items-center text-error-text bg-error self-center py-2 px-4 rounded-full border border-error-border shadow-smooth hover:shadow-banner transition duration-500"
+          >
+            Belum ada data dari galeri
+          </div>
+
+          <!-- gallery -->
+          <div
+            v-else
             v-for="item in galleries"
             :key="item.id"
             class="cursor-pointer group relative overflow-hidden rounded-xl"
@@ -54,10 +77,27 @@ const galleries = ref([])
 const showModal = ref(false)
 const selected = ref({})
 
-const loadGallery = async () => {
-  const res = await fetch('http://localhost:3080/api/gallery')
+const loading = ref(true)
+const error = ref(null)
 
-  galleries.value = await res.json()
+const loadGallery = async () => {
+  loading.value = true
+  error.value = null
+
+  try {
+    const res = await fetch('http://localhost:3080/api/gallery')
+
+    if (!res.ok) {
+      throw new Error(`Gagal mengambil data dari server!\nCobalah beberapa saat lagi.`)
+    }
+
+    const data = await res.json()
+    galleries.value = data
+  } catch (err) {
+    error.value = err.message || 'Database tidak bisa diakses!'
+  } finally {
+    loading.value = false
+  }
 }
 
 const openModal = (item) => {
