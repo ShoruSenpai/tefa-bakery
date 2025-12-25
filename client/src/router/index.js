@@ -4,13 +4,13 @@ const routes = [
   {
     name: 'home',
     path: '/',
-    component: () => import('/src/pages/HomePage.vue'),
+    component: () => import('/src/pages/user/HomePage.vue'),
     meta: { title: 'Tefa Bakery | Home', fullscreen: true },
   },
   {
     name: 'about',
     path: '/Tentang-Kami',
-    component: () => import('/src/pages/AboutPage.vue'),
+    component: () => import('/src/pages/user/AboutPage.vue'),
     meta: { title: 'Tefa Bakery | Tentang Kami', fullscreen: true },
   },
   // under construction
@@ -24,14 +24,14 @@ const routes = [
   {
     name: 'gallery',
     path: '/Galeri',
-    component: () => import('/src/pages/GalleryPage.vue'),
+    component: () => import('/src/pages/user/GalleryPage.vue'),
     meta: { title: 'Tefa Bakery | Galeri', fullscreen: false },
   },
   // under construction
   {
     name: 'contact',
     path: '/Kontak',
-    component: () => import('/src/pages/ContactPage.vue'),
+    component: () => import('/src/pages/user/ContactPage.vue'),
     meta: { title: 'Tefa Bakery | Kontak', fullscreen: false },
   },
 
@@ -41,6 +41,14 @@ const routes = [
     path: '/:pathMatch(.*)*',
     component: () => import('/src/pages/NotFound.vue'),
     meta: { title: 'Tefa Bakery | 404 Not Found', fullscreen: true },
+  },
+
+  // testing route
+  {
+    name: 'testing-route',
+    path: '/testing-page',
+    component: () => import('/src/components/GalleryModal.vue'),
+    meta: { title: 'Tefa Bakery | Testing Page', fullscreen: true },
   },
 ]
 

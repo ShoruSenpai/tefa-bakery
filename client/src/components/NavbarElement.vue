@@ -1,7 +1,7 @@
 <template>
   <nav
     ref="navbar"
-    class="navbar fixed flex bg-primary-navbar py-4 shadow-[0_2px_8px_rgba(0,0,0,0.05)] border-b border-tertiary-border w-full z-999"
+    class="navbar fixed flex bg-primary-navbar py-4 shadow-[0_2px_8px_rgba(0,0,0,0.05)] border-b border-tertiary-border w-full z-100"
   >
     <div class="flex items-center justify-between px-26 w-full">
       <RouterLink to="/" class="flex items-center gap-2">
