@@ -2,10 +2,11 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 // custom css assets
-import './assets/styles/shadow.css'
-import './assets/styles/colors.css'
-import './assets/styles/animations.css'
-import './assets/styles/fonts.css'
+import '/src/assets/styles/shadow.css'
+import '/src/assets/styles/colors.css'
+import '/src/assets/styles/animations.css'
+import '/src/assets/styles/fonts.css'
+import '/src/assets/styles/loading.css'
 
 // tailwind assets
 import './assets/main.css'

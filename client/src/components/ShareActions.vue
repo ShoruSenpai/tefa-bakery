@@ -1,6 +1,10 @@
 <template>
-  <div v-if="open" class="flex gap-2 absolute inset-0 z-102" @click="$emit('close')">
-    <div @click.stop class="bg-on-primary rounded-xl p-6 w-80 space-y-4">
+  <div
+    v-if="open"
+    class="fixed inset-0 z-102 flex justify-center items-center bg-black/30"
+    @click="$emit('close')"
+  >
+    <div @click.stop class="bg-on-primary rounded-xl p-6 w-80 flex gap-4 justify-center">
       <button @click="share" class="px-4 py-2 rounded-lg bg-secondary text-sm hover:opacity-80">
         Bagikan
       </button>

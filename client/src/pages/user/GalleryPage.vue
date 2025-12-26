@@ -12,18 +12,32 @@
         </div>
 
         <!-- main content -->
-        <div class="grid grid-cols-3 auto-rows-[220px] gap-6 grid-flow-dense px-48 py-24">
+        <div
+          class="grid grid-cols-3 auto-rows-[220px] gap-6 grid-flow-dense px-48 py-24 relative min-h-[440px]"
+        >
           <!-- loading -->
-          <div v-if="loading" class="text-center font-medium col-span-3 flex items-center text-xl">
-            Memuat galeri...
-          </div>
+          <div
+            v-if="loading"
+            class="flex items-center justify-center primary-loading col-span-3"
+          ></div>
 
           <!-- error -->
           <div
             v-else-if="error"
-            class="whitespace-pre-line font-medium text-center col-span-3 flex items-center text-error-text bg-error self-center py-2 px-6 rounded-3xl border border-error-border shadow-smooth hover:shadow-banner transition duration-500"
+            class="col-span-3 max-w-xs w-xs flex flex-col items-center justify-center gap-4 bg-error text-error-text px-8 py-6 rounded-3xl border border-error-border shadow-smooth hover:shadow-banner transition duration-500"
           >
-            {{ error }}
+            <div class="text-4xl">😕</div>
+
+            <p class="text-center whitespace-pre-line font-medium">
+              {{ error }}
+            </p>
+
+            <button
+              @click="loadGallery"
+              class="px-6 py-2 rounded-full bg-error-container text-primary font-semibold hover:opacity-90 transition"
+            >
+              Coba lagi
+            </button>
           </div>
 
           <!-- empty -->

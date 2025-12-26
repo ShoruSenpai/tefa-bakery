@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+
+@layer utilities {
+  .primary-loading {
+    width: 96px;
+    height: 96px;
+    position: relative;
+    border-radius: 50%;
+    border: 8px solid transparent;
+    border-top-color: #f5e6d3;
+    animation: spin 1s linear infinite;
+  }
+
+  .primary-loading::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    border: 8px solid transparent;
+    border-top-color: #6b4423;
+    animation: spin 0.5s linear infinite reverse;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
